@@ -6,20 +6,23 @@ public class Message {
     private String time;
     private int isEdit;
     private int chatId;
+    private int authorId;
 
-    public Message(int id, String message, String time, int isEdit, int chatId) {
+    public Message(int id, String message, String time, int isEdit, int chatId,int authorId) {
         this.id = id;
         this.message = message;
         this.time = time;
         this.isEdit = isEdit;
         this.chatId = chatId;
+        this.authorId = authorId;
     }
 
-    public Message(String message, String time, int isEdit,int chatId) {
+    public Message(String message, String time, int isEdit, int chatId, int authorId) {
         this.message = message;
         this.time = time;
         this.isEdit = isEdit;
         this.chatId = chatId;
+        this.authorId = authorId;
     }
 
     public void setMessage(String message) {
@@ -36,6 +39,10 @@ public class Message {
 
     public void setChatId(int chatId) {
         this.chatId = chatId;
+    }
+
+    public void setAuthorId(int authorId) {
+        this.authorId = authorId;
     }
 
     public int getId() {
@@ -56,5 +63,9 @@ public class Message {
 
     public int getChatId() {
         return chatId;
+    }
+
+    public int getAuthorId() {
+        return authorId;
     }
 }

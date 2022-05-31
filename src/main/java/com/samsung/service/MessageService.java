@@ -1,11 +1,12 @@
-package com.samsung.dao;
+package com.samsung.service;
 
 import com.samsung.domain.Message;
 import com.samsung.domain.Profile;
 
 import java.util.List;
 
-public interface MessageDao {
+public interface MessageService {
+
     void insert(Message message);
 
     void update(Message message);
