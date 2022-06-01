@@ -1,11 +1,11 @@
-package com.samsung.dao;
+package com.samsung.service;
 
 import com.samsung.domain.Chat;
-import com.samsung.domain.Message;
 
 import java.util.List;
 
-public interface ChatDao {
+public interface ChatService {
+
     void insert(Chat chat);
 
     void update(Chat chat);
@@ -17,4 +17,8 @@ public interface ChatDao {
     List<Chat> getByName(String name);
 
     List<Chat> getAllByUserId(int id);
+
+    void addUser(int chatId,int userId);
+
+    boolean isHasProfile(Chat chat, int profileId);
 }
