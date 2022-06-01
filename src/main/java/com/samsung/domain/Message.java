@@ -6,9 +6,9 @@ public class Message {
     private String time;
     private int isEdit;
     private int chatId;
-    private int authorId;
+    private Profile authorId;
 
-    public Message(int id, String message, String time, int isEdit, int chatId,int authorId) {
+    public Message(int id, String message, String time, int isEdit, int chatId,Profile authorId) {
         this.id = id;
         this.message = message;
         this.time = time;
@@ -17,7 +17,7 @@ public class Message {
         this.authorId = authorId;
     }
 
-    public Message(String message, String time, int isEdit, int chatId, int authorId) {
+    public Message(String message, String time, int isEdit, int chatId, Profile authorId) {
         this.message = message;
         this.time = time;
         this.isEdit = isEdit;
@@ -41,7 +41,7 @@ public class Message {
         this.chatId = chatId;
     }
 
-    public void setAuthorId(int authorId) {
+    public void setAuthorId(Profile authorId) {
         this.authorId = authorId;
     }
 
@@ -65,7 +65,7 @@ public class Message {
         return chatId;
     }
 
-    public int getAuthorId() {
+    public Profile getAuthorId() {
         return authorId;
     }
 }

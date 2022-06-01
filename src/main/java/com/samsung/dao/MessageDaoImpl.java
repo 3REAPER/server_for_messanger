@@ -11,13 +11,15 @@ import java.util.List;
 public class MessageDaoImpl implements MessageDao{
     private static final String CON_STR = "jdbc:sqlite:C:/Users/Nikita/Desktop/project/database/database.db";
     private static MessageDaoImpl instance = null;
-    private Connection connection;
+    private final ProfileDao profileDao;
+    private final Connection connection;
 
     public MessageDaoImpl() throws SQLException, ClassNotFoundException {
         DriverManager.registerDriver(new JDBC());
         // Выполняем подключение к базе данных
         Class.forName("org.sqlite.JDBC");
         this.connection = DriverManager.getConnection(CON_STR);
+        this.profileDao = new ProfileDaoImpl();
     }
 
     public static synchronized MessageDaoImpl getInstance() throws SQLException, ClassNotFoundException {
@@ -81,7 +83,7 @@ public class MessageDaoImpl implements MessageDao{
                     resultSet.getString("time"),
                     resultSet.getInt("isEdit"),
                     resultSet.getInt("chatId"),
-                    resultSet.getInt("authorId")
+                    profileDao.getById(resultSet.getInt("authorId"))
             );
             // Выполняем запрос
         } catch (SQLException e) {
@@ -103,7 +105,7 @@ public class MessageDaoImpl implements MessageDao{
                         resultSet.getString("time"),
                         resultSet.getInt("isEdit"),
                         resultSet.getInt("chatId"),
-                        resultSet.getInt("authorId")
+                        profileDao.getById(resultSet.getInt("authorId"))
                 ));
             }
             return list;
@@ -126,7 +128,7 @@ public class MessageDaoImpl implements MessageDao{
                         resultSet.getString("time"),
                         resultSet.getInt("isEdit"),
                         resultSet.getInt("chatId"),
-                        resultSet.getInt("authorId")
+                        profileDao.getById(resultSet.getInt("authorId"))
                 ));
             }
             return list;

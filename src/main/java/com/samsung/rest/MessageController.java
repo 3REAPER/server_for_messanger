@@ -14,9 +14,11 @@ import java.util.List;
 @RestController
 public class MessageController {
     private final MessageService messageService;
+    private final ProfileService profileService;
 
     public MessageController() throws SQLException, ClassNotFoundException {
         this.messageService = new MessageServiceImpl();
+        this.profileService = new ProfileServiceImpl();
     }
 
     @PostMapping("/message")
@@ -31,7 +33,7 @@ public class MessageController {
                 time,
                 isEdit,
                 chatId,
-                authorId
+                profileService.getById(authorId)
         );
 
         messageService.insert(message);
@@ -52,7 +54,7 @@ public class MessageController {
                 time,
                 isEdit,
                 chatId,
-                authorId
+                profileService.getById(authorId)
         );
 
         messageService.update(message);

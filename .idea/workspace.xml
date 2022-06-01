@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b4879d4-d4ca-4820-97c7-9f5fc7f64e90" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/dao/MessageDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/samsung/dao/MessageDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/domain/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/samsung/domain/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/rest/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/samsung/rest/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/ChatDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/samsung/dao/ChatDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/ChatDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/samsung/dao/ChatDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/MessageDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/samsung/dao/MessageDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/MessageDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/samsung/dao/MessageDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/domain/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/samsung/domain/Message.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
