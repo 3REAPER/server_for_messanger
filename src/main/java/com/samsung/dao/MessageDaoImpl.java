@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MessageDaoImpl implements MessageDao{
-    private static final String CON_STR = "jdbc:sqlite:C:/Users/Nikita/Desktop/project/database/database.db";
+    private static final String CON_STR = "jdbc:sqlite:C:Users/pervu/OneDrive/Desktop/database.db";
     private static MessageDaoImpl instance = null;
     private final ProfileDao profileDao;
     private final Connection connection;

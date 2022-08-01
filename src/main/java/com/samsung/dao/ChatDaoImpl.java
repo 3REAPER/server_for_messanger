@@ -5,12 +5,13 @@ import com.samsung.domain.Message;
 import com.samsung.domain.Profile;
 import org.sqlite.JDBC;
 
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ChatDaoImpl implements ChatDao{
-    private static final String CON_STR = "jdbc:sqlite:C:/Users/Nikita/Desktop/project/database/database.db";
+    private static final String CON_STR = "jdbc:sqlite:C:Users/pervu/OneDrive/Desktop/database.db";
     private static ChatDao instance = null;
     private final Connection connection;
 

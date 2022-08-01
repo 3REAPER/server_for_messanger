@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProfileDaoImpl implements ProfileDao{
-    private static final String CON_STR = "jdbc:sqlite:C:/Users/Nikita/Desktop/project/database/database.db";
+    private static final String CON_STR = "jdbc:sqlite:C:Users/pervu/OneDrive/Desktop/database.db";
     private static ProfileDaoImpl instance = null;
     private Connection connection;
 

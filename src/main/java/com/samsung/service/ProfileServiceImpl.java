@@ -1,5 +1,6 @@
 package com.samsung.service;
 
+import com.samsung.LibraryApp;
 import com.samsung.dao.ProfileDao;
 import com.samsung.dao.ProfileDaoImpl;
 import com.samsung.domain.Profile;
@@ -18,7 +19,8 @@ public class ProfileServiceImpl implements ProfileService{
     @Override
     @Transactional
     public String insert(Profile profile) {
-        if(profileDao.getByLogin(profile.getLogin()) != null) {
+        List<Profile> findProfiles = profileDao.getByLogin(profile.getLogin());
+        if(findProfiles.size() == 0) {
             profileDao.insert(profile);
             return "Success";
         }else {

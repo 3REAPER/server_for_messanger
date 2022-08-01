@@ -5,15 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b4879d4-d4ca-4820-97c7-9f5fc7f64e90" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/samsung/rest/ChatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/samsung/service/ChatService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/samsung/service/ChatServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jdbc_api_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_7_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_7_21.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_7_22.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_36_0_3.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/dao/ChatDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/samsung/dao/ChatDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibrarySpring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LibrarySpring.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/dao/ChatDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/samsung/dao/ChatDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/domain/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/samsung/domain/Chat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/ChatDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/samsung/dao/ChatDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/dao/MessageDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/samsung/dao/MessageDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/dao/ProfileDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/samsung/dao/ProfileDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/ChatDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/samsung/dao/ChatDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/MessageDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/samsung/dao/MessageDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/ProfileDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/samsung/dao/ProfileDaoImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,18 +37,28 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="29uyIaUJnxc8siNoWnPKCpsqYrT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/server_for_messanger/jdbc/sqlite-jdbc-3.7.2.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  }
+}</component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="LibraryApp" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.samsung.LibraryApp" />
       <module name="LibrarySpring" />
       <method v="2">
@@ -76,29 +92,34 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/dao/ChatDaoImpl.java</url>
-          <line>123</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/dao/ChatDaoImpl.java</url>
-          <line>124</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java</url>
+          <line>23</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/dao/ChatDaoImpl.java</url>
-          <line>126</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java</url>
+          <line>24</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/dao/ChatDaoImpl.java</url>
-          <line>125</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java</url>
+          <line>25</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/dao/ChatDaoImpl.java</url>
-          <line>127</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java</url>
+          <line>26</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
