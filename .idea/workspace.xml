@@ -4,22 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b4879d4-d4ca-4820-97c7-9f5fc7f64e90" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jdbc_api_1_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_7_21.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_7_22.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_36_0_3.xml" beforeDir="false" />
+    <list default="true" id="1b4879d4-d4ca-4820-97c7-9f5fc7f64e90" name="Default Changelist" comment="fix">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/ResultEmailAndPassword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibrarySpring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LibrarySpring.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/dao/ChatDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/samsung/dao/ChatDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/dao/MessageDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/samsung/dao/MessageDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/dao/ProfileDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/samsung/dao/ProfileDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/ChatDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/samsung/dao/ChatDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/MessageDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/samsung/dao/MessageDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/ProfileDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/samsung/dao/ProfileDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/LibraryApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/LibraryApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/dao/ChatDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ChatDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/dao/ChatDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ChatDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/dao/MessageDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/dao/MessageDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/dao/ProfileDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ProfileDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/dao/ProfileDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ProfileDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/domain/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Chat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/domain/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/domain/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/rest/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/rest/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/rest/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/service/ChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/ChatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/service/ChatServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/ChatServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/MessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/service/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/MessageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/ProfileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/ProfileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/LibraryApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/ChatDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/ChatDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/MessageDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/MessageDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/ProfileDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/dao/ProfileDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/domain/Chat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/domain/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/domain/Profile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/rest/ChatController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/rest/MessageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/rest/ProfileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/service/ChatService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/service/ChatServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/service/MessageService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/service/MessageServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/service/ProfileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/samsung/service/ProfileServiceImpl.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,16 +79,21 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/server_for_messanger/jdbc/sqlite-jdbc-3.7.2.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/project/server_for_messanger&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
 }</component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="getMessages" />
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="LibraryApp" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.samsung.LibraryApp" />
+      <option name="MAIN_CLASS_NAME" value="com.pervukhin.LibraryApp" />
       <module name="LibrarySpring" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -75,6 +109,21 @@
       <option name="presentableId" value="Default" />
       <updated>1653977192136</updated>
     </task>
+    <task id="LOCAL-00001" summary="fix">
+      <created>1659339703001</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1659339703001</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix">
+      <created>1659339735556</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1659339735556</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -88,40 +137,94 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="115" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/samsung/service/ProfileServiceImpl.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/rest/ChatController.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/rest/ChatController.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/rest/ChatController.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Chat.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Chat.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Chat.java</url>
+          <line>122</line>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Chat.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Chat.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="131" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.sqlite.RS" memberName="open" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
