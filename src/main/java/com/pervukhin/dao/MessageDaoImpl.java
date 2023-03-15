@@ -33,13 +33,14 @@ public class MessageDaoImpl implements MessageDao{
     @Override
     public void insert(Message message, int chatId) {
         try (PreparedStatement statement = this.connection.prepareStatement(
-                "INSERT INTO Message(`message`, `time`, `isEdit`, `authorId`, `conditionSend`) " +
-                        "VALUES(?, ?, ?, ?, ?)")) {
+                "INSERT INTO Message(`message`, `time`, `isEdit`, `authorId`, `conditionSend`, `chatId`) " +
+                        "VALUES(?, ?, ?, ?, ?, ?)")) {
             statement.setObject(1, message.getMessage());
             statement.setObject(2, message.getTime());
             statement.setObject(3, message.getIsEdit());
-            statement.setObject(4, message.getConditionSend());
-            statement.setObject(5, message.getAuthor().getId());
+            statement.setObject(4, message.getAuthor().getId());
+            statement.setObject(5, message.getConditionSend());
+            statement.setObject(6, message.getChatId());
             // Выполняем запрос
 
             statement.execute();
@@ -61,13 +62,14 @@ public class MessageDaoImpl implements MessageDao{
 
     @Override
     public void update(Message message) {
-        try (PreparedStatement statement = this.connection.prepareStatement("UPDATE Message SET message=?, time=?, isEdit=?, authorId=?, conditionSend=? WHERE id = ?")) {
+        try (PreparedStatement statement = this.connection.prepareStatement("UPDATE Message SET message=?, time=?, isEdit=?, authorId=?, conditionSend=?, chatId=? WHERE id = ?")) {
             statement.setObject(1, message.getMessage());
             statement.setObject(2, message.getTime());
             statement.setObject(3, message.getIsEdit());
             statement.setObject(4, message.getAuthor().getId());
-            statement.setObject(4, message.getConditionSend());
-            statement.setObject(6, message.getId());
+            statement.setObject(5, message.getConditionSend());
+            statement.setObject(6, message.getChatId());
+            statement.setObject(7, message.getId());
             // Выполняем запрос
             statement.execute();
         } catch (SQLException e) {
@@ -98,7 +100,8 @@ public class MessageDaoImpl implements MessageDao{
                     resultSet.getString("time"),
                     resultSet.getString("isEdit"),
                     profileDao.getById(resultSet.getInt("authorId")),
-                    resultSet.getInt("conditionSend")
+                    resultSet.getInt("conditionSend"),
+                    resultSet.getInt("chatId")
             );
             // Выполняем запрос
         } catch (SQLException e) {
@@ -120,8 +123,6 @@ public class MessageDaoImpl implements MessageDao{
         }
     }
 
-
-
     @Override
     public List<Message> getAll() {
         try (PreparedStatement statement = this.connection.prepareStatement("SELECT * FROM Message")) {
@@ -134,7 +135,8 @@ public class MessageDaoImpl implements MessageDao{
                         resultSet.getString("time"),
                         resultSet.getString("isEdit"),
                         profileDao.getById(resultSet.getInt("authorId")),
-                        resultSet.getInt("conditionSend")
+                        resultSet.getInt("conditionSend"),
+                        resultSet.getInt("chatId")
                 ));
             }
             return list;

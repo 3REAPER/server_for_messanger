@@ -1,5 +1,6 @@
 package com.pervukhin.rest;
 
+import com.pervukhin.domain.Chat;
 import com.pervukhin.domain.Message;
 import com.pervukhin.service.*;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class MessageController {
                               @RequestParam String isEdit,
                               @RequestParam int authorId,
                               @RequestParam int conditionSend,
-                              @RequestParam int chatId) throws SQLException, ClassNotFoundException {
+                              @RequestParam int chatId){
 
 
         Message message = new Message(
@@ -34,7 +35,8 @@ public class MessageController {
                 time,
                 isEdit,
                 profileService.getById(authorId),
-                conditionSend
+                conditionSend,
+                chatId
         );
 
         messageService.insert(message, chatId);
@@ -47,7 +49,8 @@ public class MessageController {
             @RequestParam String time,
             @RequestParam String isEdit,
             @RequestParam int authorId,
-            @RequestParam int conditionSend) throws SQLException, ClassNotFoundException {
+            @RequestParam int conditionSend,
+            @RequestParam int chatId){
 
         Message message = new Message(
                 id,
@@ -55,7 +58,8 @@ public class MessageController {
                 time,
                 isEdit,
                 profileService.getById(authorId),
-                conditionSend
+                conditionSend,
+                chatId
         );
 
         messageService.update(message);
@@ -77,7 +81,12 @@ public class MessageController {
     }
 
     @GetMapping("/message")
-    public List<Message> getAll() throws SQLException, ClassNotFoundException {
+    public List<Message> getAll(){
         return messageService.getAll();
+    }
+
+    @GetMapping("/message/unread/{profileId}")
+    public List<Message> getUnread(@PathVariable int profileId){
+        return messageService.getUnread(profileId);
     }
 }

@@ -92,6 +92,10 @@ public class Chat {
     public void setMessages(String messages) {
         this.messages = parseStringToListMessages(messages);
     }
+
+    public void addMessages(Message messages) {
+        this.messages.add(messages);
+    }
     
     public static Profile parseIntToAdmin(int adminId){
         try {

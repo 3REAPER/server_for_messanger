@@ -6,24 +6,26 @@ public class Message {
     private String time;
     private String isEdit;
     private Profile authorId;
-
     private int conditionSend;
+    private int chatId;
 
-    public Message(int id, String message, String time, String isEdit, Profile authorId, int conditionSend) {
+    public Message(int id, String message, String time, String isEdit, Profile authorId, int conditionSend, int chatId) {
         this.id = id;
         this.message = message;
         this.time = time;
         this.isEdit = isEdit;
         this.authorId = authorId;
         this.conditionSend = conditionSend;
+        this.chatId = chatId;
     }
 
-    public Message(String message, String time, String isEdit, Profile authorId, int conditionSend) {
+    public Message(String message, String time, String isEdit, Profile authorId, int conditionSend, int chatId) {
         this.message = message;
         this.time = time;
         this.isEdit = isEdit;
         this.authorId = authorId;
         this.conditionSend = conditionSend;
+        this.chatId = chatId;
     }
 
     public void setMessage(String message) {
@@ -45,6 +47,11 @@ public class Message {
     public void setConditionSend(int conditionSend) {
         this.conditionSend = conditionSend;
     }
+
+    public void setChatId(int chatId) {
+        this.chatId = chatId;
+    }
+
     public int getId() {
         return id;
     }
@@ -60,11 +67,16 @@ public class Message {
     public String getIsEdit() {
         return isEdit;
     }
+
     public Profile getAuthor() {
         return authorId;
     }
 
     public int getConditionSend() {
         return conditionSend;
+    }
+
+    public int getChatId() {
+        return chatId;
     }
 }

@@ -1,5 +1,6 @@
 package com.pervukhin.service;
 
+import com.pervukhin.domain.Chat;
 import com.pervukhin.domain.Message;
 
 import java.sql.SQLException;
@@ -18,4 +19,5 @@ public interface MessageService {
     List<Message> getAllByChatId(int chatId) throws SQLException, ClassNotFoundException;
 
     List<Message> getAll();
+    List<Message> getUnread(int profileId);
 }

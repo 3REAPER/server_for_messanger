@@ -9,9 +9,12 @@ import com.pervukhin.domain.Chat;
 import com.pervukhin.domain.Message;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class MessageServiceImpl implements MessageService{
+public class MessageServiceImpl implements MessageService {
     private MessageDao messageDao;
 
     private ChatDao chatDao;
@@ -49,5 +52,20 @@ public class MessageServiceImpl implements MessageService{
     @Override
     public List<Message> getAll() {
         return messageDao.getAll();
+    }
+
+    @Override
+    public List<Message> getUnread(int profileId) {
+        List<Chat> chats = chatDao.getAllByUserId(profileId);
+        List<Message> unreadMessages = new ArrayList<>();
+        for (Chat chat : chats) {
+            for (Message message : chat.getMessages()) {
+                int conditionSend = message.getConditionSend();
+                if ((conditionSend == 0) && message.getAuthor().getId() != profileId ) {
+                    unreadMessages.add(message);
+                }
+            }
+        }
+        return unreadMessages;
     }
 }
