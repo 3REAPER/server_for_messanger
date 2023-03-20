@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1b4879d4-d4ca-4820-97c7-9f5fc7f64e90" name="Default Changelist" comment="updates models">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Chat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/MessageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/MessageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/project/server_for_messanger",
+    "last_opened_file_path": "C:/Users/Nikita/Desktop/server_for_messanger",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -125,41 +120,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="115" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="121" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/rest/ChatController.java</url>
           <line>71</line>
           <option name="timeStamp" value="122" />
@@ -200,24 +160,19 @@
           <option name="timeStamp" value="131" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="146" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/service/ProfileServiceImpl.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="132" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="147" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/service/ProfileServiceImpl.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="133" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="148" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="149" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/service/ProfileServiceImpl.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="134" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

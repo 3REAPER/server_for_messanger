@@ -1,5 +1,8 @@
 package com.pervukhin.domain;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class Message {
     private int id;
     private String message;
@@ -78,5 +81,11 @@ public class Message {
 
     public int getChatId() {
         return chatId;
+    }
+
+    public static String getDateNow(){
+        String[] arrayListDate = LocalDate.now().toString().split("-");
+        String[] arrayListTime = LocalTime.now().toString().split(":");
+        return arrayListDate[2] +"-" +arrayListDate[1] +"-" +arrayListDate[0] +"T" +arrayListTime[0] +":" +arrayListTime[1];
     }
 }

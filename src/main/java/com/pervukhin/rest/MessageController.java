@@ -23,7 +23,6 @@ public class MessageController {
 
     @PostMapping("/message")
     public void createMessage(@RequestParam String messageStr,
-                              @RequestParam String time,
                               @RequestParam String isEdit,
                               @RequestParam int authorId,
                               @RequestParam int conditionSend,
@@ -32,7 +31,7 @@ public class MessageController {
 
         Message message = new Message(
                 messageStr,
-                time,
+                Message.getDateNow(),
                 isEdit,
                 profileService.getById(authorId),
                 conditionSend,
@@ -46,7 +45,6 @@ public class MessageController {
     public void updateMessage(
             @PathVariable int id ,
             @RequestParam String messageStr,
-            @RequestParam String time,
             @RequestParam String isEdit,
             @RequestParam int authorId,
             @RequestParam int conditionSend,
@@ -55,7 +53,7 @@ public class MessageController {
         Message message = new Message(
                 id,
                 messageStr,
-                time,
+                Message.getDateNow(),
                 isEdit,
                 profileService.getById(authorId),
                 conditionSend,
