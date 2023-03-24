@@ -1,7 +1,9 @@
 package com.pervukhin.dao;
 
+import com.pervukhin.LibraryApp;
 import com.pervukhin.domain.Profile;
 import org.sqlite.JDBC;
+import org.sqlite.SQLiteConfig;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -10,13 +12,13 @@ import java.util.List;
 public class ProfileDaoImpl implements ProfileDao{
     private static final String CON_STR = "jdbc:sqlite:C:Users/Nikita/Desktop/database.db";
     private static ProfileDaoImpl instance = null;
-    private Connection connection;
+    private final Connection connection;
 
     public ProfileDaoImpl() throws SQLException, ClassNotFoundException {
         DriverManager.registerDriver(new JDBC());
         // Выполняем подключение к базе данных
         Class.forName("org.sqlite.JDBC");
-        this.connection = DriverManager.getConnection(CON_STR);
+        this.connection = LibraryApp.connection;
     }
 
     public static synchronized ProfileDaoImpl getInstance() throws SQLException, ClassNotFoundException {

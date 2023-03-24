@@ -1,5 +1,6 @@
 package com.pervukhin.dao;
 
+import com.pervukhin.LibraryApp;
 import com.pervukhin.domain.Chat;
 import com.pervukhin.domain.Message;
 import org.sqlite.JDBC;
@@ -19,7 +20,7 @@ public class MessageDaoImpl implements MessageDao{
         DriverManager.registerDriver(new JDBC());
         // Выполняем подключение к базе данных
         Class.forName("org.sqlite.JDBC");
-        this.connection = DriverManager.getConnection(CON_STR);
+        this.connection = LibraryApp.connection;
         this.profileDao = new ProfileDaoImpl();
         this.chatDao = new ChatDaoImpl();
     }

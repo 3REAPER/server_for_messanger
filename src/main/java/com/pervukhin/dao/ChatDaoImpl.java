@@ -1,5 +1,6 @@
 package com.pervukhin.dao;
 
+import com.pervukhin.LibraryApp;
 import com.pervukhin.domain.Chat;
 import com.pervukhin.domain.Message;
 import com.pervukhin.domain.Profile;
@@ -20,7 +21,7 @@ public class ChatDaoImpl implements ChatDao{
         DriverManager.registerDriver(new JDBC());
         // Выполняем подключение к базе данных
         Class.forName("org.sqlite.JDBC");
-        this.connection = DriverManager.getConnection(CON_STR);
+        this.connection = LibraryApp.connection;
     }
 
     public static synchronized ChatDao getInstance() throws SQLException, ClassNotFoundException {
