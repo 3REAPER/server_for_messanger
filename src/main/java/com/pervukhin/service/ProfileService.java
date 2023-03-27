@@ -20,5 +20,7 @@ public interface ProfileService {
 
     List<Profile> getByLogin(String login);
 
+    List<Profile> getByNumbers(List<String> numbers);
+
     ResultEmailAndPassword isRightPasswordAndLogin(String login, String password);
 }

@@ -7,6 +7,9 @@ import com.pervukhin.service.ProfileServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 public class ProfileController  {
@@ -56,6 +59,15 @@ public class ProfileController  {
     @DeleteMapping("/profile/{id}")
     public String deleteProfile(@PathVariable int id) throws SQLException, ClassNotFoundException {
         return profileService.delete(id);
+    }
+
+    @GetMapping("/profile/numbers")
+    public List<Profile> getByNumber(@RequestBody List<Map<String, String>> body){
+        List<String> list = new ArrayList<>();
+        for (Map<String,String> map: body){
+            list.add(map.get("number"));
+        }
+        return profileService.getByNumbers(list);
     }
 
     @GetMapping("/profile/{login}/{password}")

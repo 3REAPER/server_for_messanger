@@ -134,4 +134,27 @@ public class ProfileDaoImpl implements ProfileDao{
             return null;
         }
     }
+
+    @Override
+    public List<Profile> getByNumber(String number) {
+        try (PreparedStatement statement = this.connection.prepareStatement("SELECT * FROM Profile WHERE number = ?")) {
+            statement.setObject(1, number);
+            ResultSet resultSet = statement.executeQuery();
+            List<Profile> list = new ArrayList<>();
+            while (resultSet.next()) {
+                list.add(new Profile(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getString("login"),
+                        resultSet.getString("password"),
+                        resultSet.getString("number")
+                ));
+            }
+            return list;
+            // Выполняем запрос
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

@@ -7,6 +7,7 @@ import com.pervukhin.domain.ResultEmailAndPassword;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProfileServiceImpl implements ProfileService{
@@ -69,6 +70,16 @@ public class ProfileServiceImpl implements ProfileService{
     @Transactional
     public List<Profile> getByLogin(String login) {
         return profileDao.getByLogin(login);
+    }
+
+    @Override
+    public List<Profile> getByNumbers(List<String> numbers) {
+        List<Profile> list = new ArrayList<>();
+        for (String s: numbers){
+            list.addAll(profileDao.getByNumber(s));
+        }
+
+        return list;
     }
 
     @Override

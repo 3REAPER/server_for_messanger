@@ -17,4 +17,6 @@ public interface ProfileDao {
     List<Profile> getByName(String name);
 
     List<Profile> getByLogin(String login);
+
+    List<Profile> getByNumber(String number);
 }
