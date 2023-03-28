@@ -61,7 +61,7 @@ public class ProfileController  {
         return profileService.delete(id);
     }
 
-    @GetMapping("/profile/numbers")
+    @PostMapping("/profile/numbers")
     public List<Profile> getByNumber(@RequestBody List<Map<String, String>> body){
         List<String> list = new ArrayList<>();
         for (Map<String,String> map: body){

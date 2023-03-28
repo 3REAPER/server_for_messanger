@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b4879d4-d4ca-4820-97c7-9f5fc7f64e90" name="Default Changelist" comment="fix the database file is locked">
+    <list default="true" id="1b4879d4-d4ca-4820-97c7-9f5fc7f64e90" name="Default Changelist" comment="add getByNumber">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ProfileDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ProfileDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ProfileDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ProfileDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/ProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/ProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/ProfileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/LibraryApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/LibraryApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/ChatDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/ChatDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/MessageDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/MessageDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/ProfileDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/ProfileDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/ProfileDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/ProfileDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/ProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/service/ProfileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/service/ProfileService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/service/ProfileServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/service/ProfileServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679671307013</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add getByNumber">
+      <created>1679930245761</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679930245761</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,7 +136,8 @@
     <MESSAGE value="updates models" />
     <MESSAGE value="correct Date" />
     <MESSAGE value="fix the database file is locked" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix the database file is locked" />
+    <MESSAGE value="add getByNumber" />
+    <option name="LAST_COMMIT_MESSAGE" value="add getByNumber" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
