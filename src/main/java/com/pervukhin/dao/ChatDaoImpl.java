@@ -35,12 +35,16 @@ public class ChatDaoImpl implements ChatDao{
         try (PreparedStatement statement = this.connection.prepareStatement(
                 "INSERT INTO Chat(`name`, `description`, `admin`, `usersId`, `isPrivate`, `messages`) " +
                         "VALUES(?, ?, ?, ?, ?, ?)")) {
+
             statement.setObject(1, chat.getName());
             statement.setObject(2, chat.getDescription());
             statement.setObject(3, chat.getAdmin().getId());
             statement.setObject(4, Chat.parseListIntToString(chat.getUsersId()));
             statement.setObject(5, chat.getIsPrivate());
-            statement.setObject(6, chat.getMessages());
+            if (chat.getMessages().isEmpty()){
+                statement.setObject(6,"");
+            }else statement.setObject(6, chat.getMessages());
+            statement.execute();
             // Выполняем запрос
         } catch (SQLException e) {
             e.printStackTrace();
@@ -82,6 +86,7 @@ public class ChatDaoImpl implements ChatDao{
         try (PreparedStatement statement = this.connection.prepareStatement("SELECT * FROM Chat WHERE id= ?")) {
             statement.setObject(1,id);
             ResultSet resultSet = statement.executeQuery();
+            System.out.println(resultSet.getString("messages"));
             return new Chat(
                     resultSet.getInt("id"),
                     resultSet.getString("name"),

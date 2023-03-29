@@ -72,4 +72,38 @@ public class ChatServiceImpl implements ChatService{
         }
         return false;
     }
+
+    @Override
+    public Chat getByUsers(int myId, int userId) {
+        try {
+            List<Chat> chats = chatDao.getAllByUserId(myId);
+            Chat result = null;
+            for (Chat chat : chats) {
+                if (chat.getUsersId().size() == 2) {
+                    for (Profile profile : chat.getUsersId()) {
+                        if (profile.getId() == userId) {
+                            result = chat;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (result == null) {
+                Profile user = profileDao.getById(userId);
+                Profile my = profileDao.getById(myId);
+                Chat chatInserted = new Chat(user.getName(),
+                        "none",
+                        my,
+                        myId +";" +userId +";",
+                        "true",
+                        "");
+                insert(chatInserted);
+                result = getByUsers(myId, userId);
+            }
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

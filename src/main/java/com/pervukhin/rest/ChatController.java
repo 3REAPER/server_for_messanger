@@ -103,4 +103,9 @@ public class ChatController {
             @PathVariable int userId){
         chatService.addUser(chatId,userId);
     }
+
+    @GetMapping("chat/user/{myId}/{userId}")
+    public Chat getByUsers(@PathVariable int myId, @PathVariable int userId){
+        return chatService.getByUsers(myId, userId);
+    }
 }

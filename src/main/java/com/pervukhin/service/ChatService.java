@@ -2,6 +2,7 @@ package com.pervukhin.service;
 
 import com.pervukhin.domain.Chat;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface ChatService {
@@ -19,4 +20,6 @@ public interface ChatService {
     List<Chat> getAllByUserId(int id);
 
     void addUser(int chatId,int userId);
+
+    Chat getByUsers(int myId, int userId);
 }
