@@ -1,6 +1,7 @@
 package com.pervukhin.rest;
 
 import com.pervukhin.domain.Chat;
+import com.pervukhin.domain.GroupChat;
 import com.pervukhin.domain.Profile;
 import com.pervukhin.service.*;
 import org.springframework.web.bind.annotation.*;
@@ -19,21 +20,15 @@ public class ChatController {
 
     @PostMapping("chat")
     public void insert(
+            @RequestParam String usersId,
+            @RequestParam String messages,
+            @RequestParam String isGroup,
             @RequestParam String name,
             @RequestParam String description,
-            @RequestParam int admin,
-            @RequestParam String usersId,
             @RequestParam String isPrivate,
-            @RequestParam String messages) throws SQLException, ClassNotFoundException {
+            @RequestParam int admin) throws SQLException, ClassNotFoundException {
 
-        Chat chat = new Chat(
-                name,
-                description,
-                Chat.parseIntToAdmin(admin),
-                usersId,
-                isPrivate,
-                messages
-        );
+        Chat chat = getChatByParams(usersId, messages, isGroup, name, description, isPrivate, admin);
 
         chatService.insert(chat);
     }
@@ -41,22 +36,15 @@ public class ChatController {
     @PostMapping("chat/{id}")
     public void update(
             @PathVariable int id,
+            @RequestParam String usersId,
+            @RequestParam String messages,
+            @RequestParam String isGroup,
             @RequestParam String name,
             @RequestParam String description,
-            @RequestParam int admin,
-            @RequestParam String usersId,
             @RequestParam String isPrivate,
-            @RequestParam String messages) throws SQLException, ClassNotFoundException {
+            @RequestParam int admin) throws SQLException, ClassNotFoundException {
 
-        Chat chat = new Chat(
-                id,
-                name,
-                description,
-                admin,
-                usersId,
-                isPrivate,
-                messages
-        );
+        Chat chat = getChatByParams(id, usersId, messages, isGroup, name, description, isPrivate, admin);
 
         chatService.update(chat);
     }
@@ -108,4 +96,32 @@ public class ChatController {
     public Chat getByUsers(@PathVariable int myId, @PathVariable int userId){
         return chatService.getByUsers(myId, userId);
     }
+
+    private Chat getChatByParams( String usersId, String messages, String isGroup, String name, String description, String isPrivate, int admin){
+        try {
+            if (isGroup.equals("true")) {
+                return new GroupChat(usersId, messages, isGroup, name, description, isPrivate, admin);
+            } else {
+                return new Chat(usersId, messages, isGroup);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    private Chat getChatByParams(int id, String usersId, String messages, String isGroup, String name, String description, String isPrivate, int admin){
+        try {
+            if (isGroup.equals("true")) {
+                return new GroupChat(id, usersId, messages, isGroup, name, description, isPrivate, admin);
+            } else {
+                return new Chat(id, usersId, messages, isGroup);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
 }

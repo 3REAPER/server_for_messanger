@@ -12,78 +12,43 @@ import java.util.Objects;
 
 public class Chat {
     private int id;
-    private String name;
-    private String description;
-    private String isPrivate;
-    private Profile admin;
     private List<Profile> usersId;
     private List<Message> messages;
+    private Boolean isGroup;
 
-    public Chat(int id, String name, String description, int adminId, String usersId, String isPrivate, String messages) throws SQLException, ClassNotFoundException {
+    public Chat(int id,  String usersId, String messages, String isGroup) throws SQLException, ClassNotFoundException {
         this.id = id;
-        this.name = name;
-        this.description = description;
-        this.admin = parseIntToAdmin(adminId);
         this.usersId = parseStringToListInt(usersId);
-        this.isPrivate = isPrivate;
         this.messages = parseStringToListMessages(messages);
+        this.isGroup = parseStringToBoolean(isGroup);
 
     }
     
-    public Chat(String name, String description,Profile admin ,String usersId, String isPrivate, String messages) throws SQLException, ClassNotFoundException {
-        this.name = name;
-        this.description = description;
-        this.admin = admin;
+    public Chat(String usersId, String messages, String isGroup) throws SQLException, ClassNotFoundException {
         this.usersId = parseStringToListInt(usersId);
-        this.isPrivate = isPrivate;
         this.messages = parseStringToListMessages(messages);
+        this.isGroup = parseStringToBoolean(isGroup);
     }
 
     public int getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
-    public String getDescription() {
-        return description;
-    }
-
-    public Profile getAdmin() {
-        return admin;
-    }
-
     public List<Profile> getUsersId() {
         return usersId;
-    }
-
-    public String getIsPrivate() {
-        return isPrivate;
     }
 
     public List<Message> getMessages() {
         return messages;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setAdmin(int adminId) {
-        this.admin = parseIntToAdmin(adminId);
+    public Boolean getIsGroup() {
+        return isGroup;
     }
 
     public void setUsersId(List<Profile> usersId) {
         this.usersId = usersId;
 
-    }
-
-    public void setIsPrivate(String isPrivate) {
-        this.isPrivate = isPrivate;
     }
 
     public void setUsersId(String usersId){
@@ -96,7 +61,11 @@ public class Chat {
     public void addMessages(Message messages) {
         this.messages.add(messages);
     }
-    
+
+    public void setIsGroup(Boolean group) {
+        isGroup = group;
+    }
+
     public static Profile parseIntToAdmin(int adminId){
         try {
             ProfileDao profileDao = new ProfileDaoImpl();
@@ -158,21 +127,13 @@ public class Chat {
             return null;
         }
     }
-    public static boolean parseStringToBoolean(String isPrivate){
-        if (isPrivate == "true"){
+    public static boolean parseStringToBoolean(String string){
+        if (string.equals("true")){
             return true;
-        }else if (isPrivate == "false"){
+        }else if (string.equals("false")){
             return false;
         }else {
             return false;
-        }
-    }
-
-    public static String parseBooleanToString(boolean isPrivate){
-        if (isPrivate){
-            return "true";
-        }else {
-            return "false";
         }
     }
 }

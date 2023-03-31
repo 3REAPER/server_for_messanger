@@ -16,7 +16,6 @@ public class ProfileDaoImpl implements ProfileDao{
 
     public ProfileDaoImpl() throws SQLException, ClassNotFoundException {
         DriverManager.registerDriver(new JDBC());
-        // Выполняем подключение к базе данных
         Class.forName("org.sqlite.JDBC");
         this.connection = LibraryApp.connection;
     }
@@ -36,7 +35,6 @@ public class ProfileDaoImpl implements ProfileDao{
             statement.setObject(2, profile.getLogin());
             statement.setObject(3, profile.getPassword());
             statement.setObject(4, profile.getNumber());
-            // Выполняем запрос
             statement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -51,7 +49,6 @@ public class ProfileDaoImpl implements ProfileDao{
             statement.setObject(3, profile.getPassword());
             statement.setObject(4, profile.getNumber());
             statement.setObject(5, profile.getId());
-            // Выполняем запрос
             statement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -63,7 +60,6 @@ public class ProfileDaoImpl implements ProfileDao{
         try (PreparedStatement statement = this.connection.prepareStatement(
                 "DELETE FROM Profile WHERE id = ?")) {
             statement.setObject(1, id);
-            // Выполняем запрос
             statement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -82,7 +78,6 @@ public class ProfileDaoImpl implements ProfileDao{
                     resultSet.getString("password"),
                     resultSet.getString("number")
             );
-            // Выполняем запрос
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -105,7 +100,6 @@ public class ProfileDaoImpl implements ProfileDao{
                 ));
             }
             return list;
-            // Выполняем запрос
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -128,7 +122,6 @@ public class ProfileDaoImpl implements ProfileDao{
                 ));
             }
             return list;
-            // Выполняем запрос
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -151,7 +144,6 @@ public class ProfileDaoImpl implements ProfileDao{
                 ));
             }
             return list;
-            // Выполняем запрос
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

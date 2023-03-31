@@ -79,7 +79,7 @@ public class ChatServiceImpl implements ChatService{
             List<Chat> chats = chatDao.getAllByUserId(myId);
             Chat result = null;
             for (Chat chat : chats) {
-                if (chat.getUsersId().size() == 2) {
+                if (!chat.getIsGroup()) {
                     for (Profile profile : chat.getUsersId()) {
                         if (profile.getId() == userId) {
                             result = chat;
@@ -89,14 +89,10 @@ public class ChatServiceImpl implements ChatService{
                 }
             }
             if (result == null) {
-                Profile user = profileDao.getById(userId);
-                Profile my = profileDao.getById(myId);
-                Chat chatInserted = new Chat(user.getName(),
-                        "none",
-                        my,
+                Chat chatInserted = new Chat(
                         myId +";" +userId +";",
-                        "true",
-                        "");
+                        "",
+                        "false");
                 insert(chatInserted);
                 result = getByUsers(myId, userId);
             }

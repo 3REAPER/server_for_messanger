@@ -18,7 +18,6 @@ public class MessageDaoImpl implements MessageDao{
 
     public MessageDaoImpl() throws SQLException, ClassNotFoundException {
         DriverManager.registerDriver(new JDBC());
-        // Выполняем подключение к базе данных
         Class.forName("org.sqlite.JDBC");
         this.connection = LibraryApp.connection;
         this.profileDao = new ProfileDaoImpl();
@@ -42,7 +41,6 @@ public class MessageDaoImpl implements MessageDao{
             statement.setObject(4, message.getAuthor().getId());
             statement.setObject(5, message.getConditionSend());
             statement.setObject(6, message.getChatId());
-            // Выполняем запрос
 
             statement.execute();
             int messageId = statement.getGeneratedKeys().getInt("last_insert_rowId()");
@@ -71,7 +69,6 @@ public class MessageDaoImpl implements MessageDao{
             statement.setObject(5, message.getConditionSend());
             statement.setObject(6, message.getChatId());
             statement.setObject(7, message.getId());
-            // Выполняем запрос
             statement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -83,7 +80,6 @@ public class MessageDaoImpl implements MessageDao{
         try (PreparedStatement statement = this.connection.prepareStatement(
                 "DELETE FROM Message WHERE id = ?")) {
             statement.setObject(1, id);
-            // Выполняем запрос
             statement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -104,7 +100,6 @@ public class MessageDaoImpl implements MessageDao{
                     resultSet.getInt("conditionSend"),
                     resultSet.getInt("chatId")
             );
-            // Выполняем запрос
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -117,7 +112,6 @@ public class MessageDaoImpl implements MessageDao{
             statement.setObject(1, chatId);
             ResultSet resultSet = statement.executeQuery();
             return Chat.parseStringToListMessages(resultSet.getString("messages"));
-            // Выполняем запрос
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -141,7 +135,6 @@ public class MessageDaoImpl implements MessageDao{
                 ));
             }
             return list;
-            // Выполняем запрос
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
