@@ -1,13 +1,9 @@
 package com.pervukhin.domain;
-
-
-
 public class Profile {
     private int id;
     private String name;
     private String login;
     private String password;
-
     private String number;
 
     public Profile(int id, String name, String login, String password, String number) {

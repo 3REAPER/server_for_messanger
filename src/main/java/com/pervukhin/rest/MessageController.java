@@ -1,64 +1,40 @@
 package com.pervukhin.rest;
 
-import com.pervukhin.domain.Chat;
 import com.pervukhin.domain.Message;
+import com.pervukhin.rest.dto.MessageDto;
 import com.pervukhin.service.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Logger;
 
 @RestController
 public class MessageController {
     private final MessageService messageService;
     private final ProfileService profileService;
     private final ChatService chatService;
+    private final ConditionSendService conditionSendService;
 
     public MessageController() throws SQLException, ClassNotFoundException {
         this.messageService = new MessageServiceImpl();
         this.profileService = new ProfileServiceImpl();
         this.chatService = new ChatServiceImpl();
+        this.conditionSendService = new ConditionSendServiceImpl();
     }
 
     @PostMapping("/message")
-    public void createMessage(@RequestParam String messageStr,
-                              @RequestParam String isEdit,
-                              @RequestParam int authorId,
-                              @RequestParam int conditionSend,
-                              @RequestParam int chatId){
+    public void createMessage(@RequestBody MessageDto messageDto){
 
+        Message message = MessageDto.toDomainObject(messageDto);
+        message.setTime(Message.getDateNow());
 
-        Message message = new Message(
-                messageStr,
-                Message.getDateNow(),
-                isEdit,
-                profileService.getById(authorId),
-                conditionSend,
-                chatId
-        );
-
-        messageService.insert(message, chatId);
+        messageService.insert(message, message.getChatId());
     }
 
     @PostMapping("/message/{id}")
-    public void updateMessage(
-            @PathVariable int id ,
-            @RequestParam String messageStr,
-            @RequestParam String isEdit,
-            @RequestParam int authorId,
-            @RequestParam int conditionSend,
-            @RequestParam int chatId){
+    public void updateMessage(@RequestBody MessageDto messageDto){
 
-        Message message = new Message(
-                id,
-                messageStr,
-                Message.getDateNow(),
-                isEdit,
-                profileService.getById(authorId),
-                conditionSend,
-                chatId
-        );
+        Message message = MessageDto.toDomainObject(messageDto);
 
         messageService.update(message);
     }

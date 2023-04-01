@@ -1,12 +1,12 @@
 package com.pervukhin.service;
 
 import antlr.debug.MessageAdapter;
-import com.pervukhin.dao.ChatDao;
-import com.pervukhin.dao.ChatDaoImpl;
-import com.pervukhin.dao.MessageDao;
-import com.pervukhin.dao.MessageDaoImpl;
+import com.pervukhin.dao.*;
 import com.pervukhin.domain.Chat;
+import com.pervukhin.domain.ConditionSend;
 import com.pervukhin.domain.Message;
+import com.pervukhin.domain.Profile;
+import com.pervukhin.rest.dto.ConditionSendDto;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -15,17 +15,30 @@ import java.util.List;
 import java.util.Map;
 
 public class MessageServiceImpl implements MessageService {
-    private MessageDao messageDao;
-
-    private ChatDao chatDao;
+    private final MessageDao messageDao;
+    private final ChatDao chatDao;
+    private final ConditionSendDao conditionSendDao;
 
     public MessageServiceImpl() throws SQLException, ClassNotFoundException {
         this.messageDao = new MessageDaoImpl();
         this.chatDao = new ChatDaoImpl();
+        this.conditionSendDao = new ConditionSendDaoImpl();
     }
 
     @Override
     public void insert(Message message, int chatId) {
+        List<ConditionSend> conditionSends = new ArrayList<>();
+        for (Profile profile : chatDao.getById(chatId).getUsersId()) {
+            if (profile.getId() != message.getAuthor().getId()) {
+                conditionSends.add(new ConditionSend(profile.getId(), ConditionSend.CONDITION_CREATE));
+            }
+        }
+        List<Integer> listId = conditionSendDao.insert(conditionSends);
+        List<ConditionSend> conditionSendsWithId = new ArrayList<>();
+        for (int id : listId) {
+                conditionSendsWithId.add(conditionSendDao.getById(id));
+        }
+        message.setConditionSend(conditionSendsWithId);
         messageDao.insert(message, chatId);
     }
 
@@ -60,9 +73,11 @@ public class MessageServiceImpl implements MessageService {
         List<Message> unreadMessages = new ArrayList<>();
         for (Chat chat : chats) {
             for (Message message : chat.getMessages()) {
-                int conditionSend = message.getConditionSend();
-                if ((conditionSend == 0) && message.getAuthor().getId() != profileId ) {
-                    unreadMessages.add(message);
+                List<ConditionSend> list = message.getConditionSend();
+                for (ConditionSend conditionSend: list) {
+                    if (conditionSend.getProfile().getId() == profileId && conditionSend.getCondition() == ConditionSend.CONDITION_CREATE){
+                        unreadMessages.add(message);
+                    }
                 }
             }
         }

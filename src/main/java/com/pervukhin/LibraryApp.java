@@ -1,5 +1,7 @@
 package com.pervukhin;
 
+import com.pervukhin.service.ConditionSendService;
+import com.pervukhin.service.ConditionSendServiceImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;

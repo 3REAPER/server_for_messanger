@@ -39,7 +39,7 @@ public class MessageDaoImpl implements MessageDao{
             statement.setObject(2, message.getTime());
             statement.setObject(3, message.getIsEdit());
             statement.setObject(4, message.getAuthor().getId());
-            statement.setObject(5, message.getConditionSend());
+            statement.setObject(5, Message.parseListToString(message.getConditionSend()));
             statement.setObject(6, message.getChatId());
 
             statement.execute();
@@ -66,7 +66,7 @@ public class MessageDaoImpl implements MessageDao{
             statement.setObject(2, message.getTime());
             statement.setObject(3, message.getIsEdit());
             statement.setObject(4, message.getAuthor().getId());
-            statement.setObject(5, message.getConditionSend());
+            statement.setObject(5, Message.parseListToString(message.getConditionSend()));
             statement.setObject(6, message.getChatId());
             statement.setObject(7, message.getId());
             statement.execute();
@@ -97,7 +97,7 @@ public class MessageDaoImpl implements MessageDao{
                     resultSet.getString("time"),
                     resultSet.getString("isEdit"),
                     profileDao.getById(resultSet.getInt("authorId")),
-                    resultSet.getInt("conditionSend"),
+                    resultSet.getString("conditionSend"),
                     resultSet.getInt("chatId")
             );
         } catch (SQLException e) {
@@ -130,7 +130,7 @@ public class MessageDaoImpl implements MessageDao{
                         resultSet.getString("time"),
                         resultSet.getString("isEdit"),
                         profileDao.getById(resultSet.getInt("authorId")),
-                        resultSet.getInt("conditionSend"),
+                        resultSet.getString("conditionSend"),
                         resultSet.getInt("chatId")
                 ));
             }

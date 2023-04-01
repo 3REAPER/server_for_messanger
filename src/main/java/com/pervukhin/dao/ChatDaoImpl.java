@@ -169,7 +169,6 @@ public class ChatDaoImpl implements ChatDao{
 
     private Chat getChatByResultSet(ResultSet resultSet){
         try {
-            System.out.println(resultSet.getString("isGroup"));
             if (resultSet.getString("isGroup").equals("true")) {
                 return new GroupChat(
                         resultSet.getInt("id"),
