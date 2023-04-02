@@ -2,6 +2,7 @@ package com.pervukhin.rest;
 
 import com.pervukhin.domain.Profile;
 import com.pervukhin.domain.ResultEmailAndPassword;
+import com.pervukhin.rest.dto.ProfileDto;
 import com.pervukhin.service.ProfileService;
 import com.pervukhin.service.ProfileServiceImpl;
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +22,8 @@ public class ProfileController  {
 
 
     @GetMapping("/profile/{id}")
-    public Profile getProfileById(@PathVariable int id) throws SQLException, ClassNotFoundException {
-        return profileService.getById(id);
+    public ProfileDto getProfileById(@PathVariable int id) throws SQLException, ClassNotFoundException {
+        return ProfileDto.toDto(profileService.getById(id));
     }
 
     @PostMapping("/profile")
@@ -62,12 +63,12 @@ public class ProfileController  {
     }
 
     @PostMapping("/profile/numbers")
-    public List<Profile> getByNumber(@RequestBody List<Map<String, String>> body){
+    public List<ProfileDto> getByNumber(@RequestBody List<Map<String, String>> body){
         List<String> list = new ArrayList<>();
         for (Map<String,String> map: body){
             list.add(map.get("number"));
         }
-        return profileService.getByNumbers(list);
+        return ProfileDto.toDto(profileService.getByNumbers(list));
     }
 
     @GetMapping("/profile/{login}/{password}")

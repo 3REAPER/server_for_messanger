@@ -3,6 +3,7 @@ package com.pervukhin.rest;
 import com.pervukhin.domain.Chat;
 import com.pervukhin.domain.GroupChat;
 import com.pervukhin.domain.Profile;
+import com.pervukhin.rest.dto.ChatDto;
 import com.pervukhin.service.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -71,18 +72,18 @@ public class ChatController {
     }
 
     @GetMapping("chat/{id}")
-    public Chat getById(@PathVariable int id){
-        return chatService.getById(id);
+    public ChatDto getById(@PathVariable int id){
+        return ChatDto.toDto(chatService.getById(id));
     }
 
     @GetMapping("chat/name/{name}")
-    public List<Chat> getByName(@PathVariable String name){
-        return chatService.getByName(name);
+    public List<ChatDto> getByName(@PathVariable String name){
+        return ChatDto.toDto(chatService.getByName(name));
     }
 
     @GetMapping("chat/user/{id}")
-    public List<Chat> getAllByUserId(@PathVariable int id){
-        return chatService.getAllByUserId(id);
+    public List<ChatDto> getAllByUserId(@PathVariable int id){
+        return ChatDto.toDto(chatService.getAllByUserId(id));
     }
 
     @PostMapping("chat/{chatId}/user/{userId}")
@@ -93,8 +94,8 @@ public class ChatController {
     }
 
     @GetMapping("chat/user/{myId}/{userId}")
-    public Chat getByUsers(@PathVariable int myId, @PathVariable int userId){
-        return chatService.getByUsers(myId, userId);
+    public ChatDto getByUsers(@PathVariable int myId, @PathVariable int userId){
+        return ChatDto.toDto(chatService.getByUsers(myId, userId));
     }
 
     private Chat getChatByParams( String usersId, String messages, String isGroup, String name, String description, String isPrivate, int admin){

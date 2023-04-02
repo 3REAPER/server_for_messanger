@@ -30,6 +30,13 @@ public class Chat {
         this.isGroup = parseStringToBoolean(isGroup);
     }
 
+    public Chat(int id, List<Profile> userList, List<Message> messageList, Boolean isGroup) {
+        this.id = id;
+        this.usersId = userList;
+        this.messages = messageList;
+        this.isGroup = isGroup;
+    }
+
     public int getId() {
         return id;
     }

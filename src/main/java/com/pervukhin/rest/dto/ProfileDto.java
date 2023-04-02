@@ -1,10 +1,14 @@
 package com.pervukhin.rest.dto;
 
+import com.pervukhin.domain.Message;
 import com.pervukhin.domain.Profile;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Builder
@@ -35,5 +39,21 @@ public class ProfileDto {
                 profileDto.getPassword(),
                 profileDto.getNumber()
         );
+    }
+
+    public static List<ProfileDto> toDto(List<Profile> list){
+        List<ProfileDto> result = new ArrayList<>();
+        for (Profile profile: list) {
+            result.add(toDto(profile));
+        }
+        return result;
+    }
+
+    public static List<Profile> toDomainObject(List<ProfileDto> list){
+        List<Profile> result = new ArrayList<>();
+        for (ProfileDto profile: list) {
+            result.add(toDomainObject(profile));
+        }
+        return result;
     }
 }

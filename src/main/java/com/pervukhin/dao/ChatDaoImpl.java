@@ -74,9 +74,10 @@ public class ChatDaoImpl implements ChatDao{
                 statement.setObject(2, groupChat.getDescription());
                 statement.setObject(3, groupChat.getAdmin().getId());
                 statement.setObject(4, Chat.parseListIntToString(chat.getUsersId()));
-                statement.setObject(5, groupChat.getIsPrivate());
+                statement.setObject(5, groupChat.getIsPrivate().toString());
                 statement.setObject(6, Chat.parseListMessagesToString(chat.getMessages()));
-                statement.setObject(7, groupChat.getId());
+                statement.setObject(7, groupChat.getIsGroup().toString());
+                statement.setObject(8, groupChat.getId());
             }else {
                 statement.setObject(1, null);
                 statement.setObject(2, null);

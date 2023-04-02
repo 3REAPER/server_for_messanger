@@ -45,22 +45,22 @@ public class MessageController {
     }
 
     @GetMapping("/message/{id}")
-    public Message getById(@PathVariable int id) throws SQLException, ClassNotFoundException {
-        return messageService.getById(id);
+    public MessageDto getById(@PathVariable int id) throws SQLException, ClassNotFoundException {
+        return MessageDto.toDto(messageService.getById(id));
     }
 
     @GetMapping("/message/chat/{id}")
-    public List<Message> getAllByChatId(@PathVariable int id) throws SQLException, ClassNotFoundException {
-        return messageService.getAllByChatId(id);
+    public List<MessageDto> getAllByChatId(@PathVariable int id) throws SQLException, ClassNotFoundException {
+        return MessageDto.toDto(messageService.getAllByChatId(id));
     }
 
     @GetMapping("/message")
-    public List<Message> getAll(){
-        return messageService.getAll();
+    public List<MessageDto> getAll(){
+        return MessageDto.toDto(messageService.getAll());
     }
 
     @GetMapping("/message/unread/{profileId}")
-    public List<Message> getUnread(@PathVariable int profileId){
-        return messageService.getUnread(profileId);
+    public List<MessageDto> getUnread(@PathVariable int profileId){
+        return MessageDto.toDto(messageService.getUnread(profileId));
     }
 }

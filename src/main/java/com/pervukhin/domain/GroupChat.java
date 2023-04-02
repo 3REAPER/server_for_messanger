@@ -1,6 +1,7 @@
 package com.pervukhin.domain;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class GroupChat extends Chat{
     private String name;
@@ -22,6 +23,14 @@ public class GroupChat extends Chat{
         this.description = description;
         this.isPrivate = parseStringToBoolean(isPrivate);
         this.admin = parseIntToAdmin(admin);
+    }
+
+    public GroupChat(int id, List<Profile> userList, List<Message> messageList, Boolean isGroup, String name, String description, Boolean isPrivate, Profile admin) {
+        super(id, userList, messageList, isGroup);
+        this.name = name;
+        this.description = description;
+        this.isPrivate = isPrivate;
+        this.admin = admin;
     }
 
     public String getName() {

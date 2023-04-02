@@ -25,7 +25,7 @@ public class MessageDto {
     private int chatId;
 
     public static MessageDto toDto(Message message){
-        ProfileDto author = ProfileDto.toDto(message.getAuthor());
+        ProfileDto authorId = ProfileDto.toDto(message.getAuthor());
 
         List<ConditionSend> conditionSendList = message.getConditionSend();
         List<ConditionSendDto> conditionSendDtoList = new ArrayList<>();
@@ -39,14 +39,14 @@ public class MessageDto {
                 message.getMessage(),
                 message.getTime(),
                 message.getIsEdit(),
-                author,
+                authorId,
                 conditionSendDtoList,
                 message.getChatId()
         );
     }
 
     public static Message toDomainObject(MessageDto messageDto){
-        Profile author = ProfileDto.toDomainObject(messageDto.authorId);
+        Profile authorId = ProfileDto.toDomainObject(messageDto.authorId);
 
         List<ConditionSendDto> conditionSendDtoList = messageDto.getConditionSend();
         List<ConditionSend> conditionSendList = new ArrayList<>();
@@ -60,9 +60,25 @@ public class MessageDto {
                 messageDto.getMessage(),
                 messageDto.getTime(),
                 messageDto.getIsEdit(),
-                author,
+                authorId,
                 conditionSendList,
                 messageDto.getChatId()
         );
+    }
+
+    public static List<MessageDto> toDto(List<Message> list){
+        List<MessageDto> result = new ArrayList<>();
+        for (Message message: list) {
+            result.add(toDto(message));
+        }
+        return result;
+    }
+
+    public static List<Message> toDomainObject(List<MessageDto> list){
+        List<Message> result = new ArrayList<>();
+        for (MessageDto messageDto: list) {
+            result.add(toDomainObject(messageDto));
+        }
+        return result;
     }
 }

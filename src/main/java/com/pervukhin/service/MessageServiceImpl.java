@@ -45,6 +45,9 @@ public class MessageServiceImpl implements MessageService {
     @Override
     public void update(Message message) {
         messageDao.update(message);
+        for (ConditionSend conditionSend: message.getConditionSend()){
+            conditionSendDao.update(conditionSend);
+        }
     }
 
     @Override
