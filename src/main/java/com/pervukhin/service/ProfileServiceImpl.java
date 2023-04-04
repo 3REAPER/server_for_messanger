@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProfileServiceImpl implements ProfileService{
-    private ProfileDao profileDao;
+    private final ProfileDao profileDao;
 
     public ProfileServiceImpl() throws SQLException, ClassNotFoundException {
         this.profileDao = new ProfileDaoImpl();

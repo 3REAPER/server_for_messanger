@@ -1,8 +1,6 @@
 package com.pervukhin.dao;
 
 import com.pervukhin.domain.ConditionSend;
-import com.pervukhin.domain.Message;
-
 import java.util.List;
 
 public interface ConditionSendDao {

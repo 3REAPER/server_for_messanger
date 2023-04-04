@@ -1,10 +1,7 @@
 package com.pervukhin.dao;
 
 import com.pervukhin.LibraryApp;
-import com.pervukhin.domain.Chat;
 import com.pervukhin.domain.ConditionSend;
-import com.pervukhin.domain.Message;
-import com.pervukhin.domain.Profile;
 import org.sqlite.JDBC;
 
 import java.sql.*;

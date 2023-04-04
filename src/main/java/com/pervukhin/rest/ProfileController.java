@@ -22,7 +22,7 @@ public class ProfileController  {
 
 
     @GetMapping("/profile/{id}")
-    public ProfileDto getProfileById(@PathVariable int id) throws SQLException, ClassNotFoundException {
+    public ProfileDto getProfileById(@PathVariable int id) {
         return ProfileDto.toDto(profileService.getById(id));
     }
 
@@ -30,7 +30,7 @@ public class ProfileController  {
     public String createProfile(@RequestParam String name,
                               @RequestParam String login,
                               @RequestParam String password,
-                              @RequestParam String number) throws SQLException, ClassNotFoundException {
+                              @RequestParam String number){
             Profile profile = new Profile(
                     name,
                     login,
@@ -46,7 +46,7 @@ public class ProfileController  {
             @RequestParam String name,
             @RequestParam String login,
             @RequestParam String password,
-            @RequestParam String number) throws SQLException, ClassNotFoundException {
+            @RequestParam String number){
         Profile profile = new Profile(
                 id,
                 name,
@@ -58,7 +58,7 @@ public class ProfileController  {
     }
 
     @DeleteMapping("/profile/{id}")
-    public String deleteProfile(@PathVariable int id) throws SQLException, ClassNotFoundException {
+    public String deleteProfile(@PathVariable int id){
         return profileService.delete(id);
     }
 

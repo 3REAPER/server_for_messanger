@@ -3,15 +3,12 @@ package com.pervukhin.dao;
 import com.pervukhin.LibraryApp;
 import com.pervukhin.domain.Chat;
 import com.pervukhin.domain.GroupChat;
-import com.pervukhin.domain.Message;
-import com.pervukhin.domain.Profile;
 import org.sqlite.JDBC;
 
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class ChatDaoImpl implements ChatDao{
     private static final String CON_STR = "jdbc:sqlite:C:Users/Nikita/Desktop/database.db";
@@ -163,6 +160,22 @@ public class ChatDaoImpl implements ChatDao{
             }
             return list;
         }catch (SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<Chat> getAllByNameNoPrivate(String name) {
+        try (PreparedStatement statement = this.connection.prepareStatement("SELECT * FROM Chat WHERE isPrivate = 'false' AND name LIKE ?")) {
+            statement.setObject(1,name +"%");
+            ResultSet resultSet = statement.executeQuery();
+            List<Chat> list = new ArrayList<>();
+            while (resultSet.next()) {
+                list.add(getChatByResultSet(resultSet));
+            }
+            return list;
+        } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }

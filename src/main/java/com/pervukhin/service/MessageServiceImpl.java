@@ -1,18 +1,13 @@
 package com.pervukhin.service;
 
-import antlr.debug.MessageAdapter;
 import com.pervukhin.dao.*;
 import com.pervukhin.domain.Chat;
 import com.pervukhin.domain.ConditionSend;
 import com.pervukhin.domain.Message;
 import com.pervukhin.domain.Profile;
-import com.pervukhin.rest.dto.ConditionSendDto;
-
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class MessageServiceImpl implements MessageService {
     private final MessageDao messageDao;
@@ -61,7 +56,7 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
-    public List<Message> getAllByChatId(int chatId) throws SQLException, ClassNotFoundException {
+    public List<Message> getAllByChatId(int chatId){
         return messageDao.getAllByChatId(chatId);
     }
 

@@ -102,4 +102,9 @@ public class ChatServiceImpl implements ChatService{
             return null;
         }
     }
+
+    @Override
+    public List<Chat> getAllByNameNoPrivate(String name) {
+        return chatDao.getAllByNameNoPrivate(name);
+    }
 }

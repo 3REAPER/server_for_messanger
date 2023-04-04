@@ -5,7 +5,6 @@ import com.pervukhin.dao.MessageDaoImpl;
 import com.pervukhin.dao.ProfileDao;
 import com.pervukhin.dao.ProfileDaoImpl;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -16,7 +15,7 @@ public class Chat {
     private List<Message> messages;
     private Boolean isGroup;
 
-    public Chat(int id,  String usersId, String messages, String isGroup) throws SQLException, ClassNotFoundException {
+    public Chat(int id,  String usersId, String messages, String isGroup){
         this.id = id;
         this.usersId = parseStringToListInt(usersId);
         this.messages = parseStringToListMessages(messages);
@@ -24,7 +23,7 @@ public class Chat {
 
     }
     
-    public Chat(String usersId, String messages, String isGroup) throws SQLException, ClassNotFoundException {
+    public Chat(String usersId, String messages, String isGroup){
         this.usersId = parseStringToListInt(usersId);
         this.messages = parseStringToListMessages(messages);
         this.isGroup = parseStringToBoolean(isGroup);

@@ -55,16 +55,20 @@ public class ChatDto {
 
     public static List<ChatDto> toDto(List<Chat> list){
         List<ChatDto> result = new ArrayList<>();
-        for (Chat chat: list) {
-            result.add(toDto(chat));
+        if (list != null) {
+            for (Chat chat : list) {
+                result.add(toDto(chat));
+            }
         }
         return result;
     }
 
     public static List<Chat> toDomainObject(List<ChatDto> list){
         List<Chat> result = new ArrayList<>();
-        for (ChatDto chat: list) {
-            result.add(toDomainObject(chat));
+        if (list != null) {
+            for (ChatDto chat : list) {
+                result.add(toDomainObject(chat));
+            }
         }
         return result;
     }

@@ -1,6 +1,5 @@
 package com.pervukhin.rest.dto;
 
-import com.pervukhin.domain.Message;
 import com.pervukhin.domain.Profile;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -43,16 +42,20 @@ public class ProfileDto {
 
     public static List<ProfileDto> toDto(List<Profile> list){
         List<ProfileDto> result = new ArrayList<>();
-        for (Profile profile: list) {
-            result.add(toDto(profile));
+        if (list != null) {
+            for (Profile profile : list) {
+                result.add(toDto(profile));
+            }
         }
         return result;
     }
 
     public static List<Profile> toDomainObject(List<ProfileDto> list){
         List<Profile> result = new ArrayList<>();
-        for (ProfileDto profile: list) {
-            result.add(toDomainObject(profile));
+        if (list != null) {
+            for (ProfileDto profile : list) {
+                result.add(toDomainObject(profile));
+            }
         }
         return result;
     }

@@ -3,8 +3,6 @@ package com.pervukhin.dao;
 import com.pervukhin.LibraryApp;
 import com.pervukhin.domain.Profile;
 import org.sqlite.JDBC;
-import org.sqlite.SQLiteConfig;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

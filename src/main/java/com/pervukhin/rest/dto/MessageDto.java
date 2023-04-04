@@ -66,18 +66,22 @@ public class MessageDto {
         );
     }
 
-    public static List<MessageDto> toDto(List<Message> list){
+    public static List<MessageDto> toDto(List<Message> list) {
         List<MessageDto> result = new ArrayList<>();
-        for (Message message: list) {
-            result.add(toDto(message));
+        if (list != null) {
+            for (Message message : list) {
+                result.add(toDto(message));
+            }
         }
         return result;
     }
 
     public static List<Message> toDomainObject(List<MessageDto> list){
         List<Message> result = new ArrayList<>();
-        for (MessageDto messageDto: list) {
-            result.add(toDomainObject(messageDto));
+        if (list != null) {
+            for (MessageDto messageDto : list) {
+                result.add(toDomainObject(messageDto));
+            }
         }
         return result;
     }

@@ -1,19 +1,8 @@
 package com.pervukhin.domain;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.pervukhin.dao.MessageDao;
-import com.pervukhin.dao.MessageDaoImpl;
 import com.pervukhin.dao.ProfileDao;
 import com.pervukhin.dao.ProfileDaoImpl;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.extern.jackson.Jacksonized;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 public class ConditionSend {
     private int id;
     private Profile profile;

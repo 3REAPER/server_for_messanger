@@ -27,7 +27,7 @@ public class ChatController {
             @RequestParam String name,
             @RequestParam String description,
             @RequestParam String isPrivate,
-            @RequestParam int admin) throws SQLException, ClassNotFoundException {
+            @RequestParam int admin){
 
         Chat chat = getChatByParams(usersId, messages, isGroup, name, description, isPrivate, admin);
 
@@ -43,7 +43,7 @@ public class ChatController {
             @RequestParam String name,
             @RequestParam String description,
             @RequestParam String isPrivate,
-            @RequestParam int admin) throws SQLException, ClassNotFoundException {
+            @RequestParam int admin){
 
         Chat chat = getChatByParams(id, usersId, messages, isGroup, name, description, isPrivate, admin);
 
@@ -96,6 +96,11 @@ public class ChatController {
     @GetMapping("chat/user/{myId}/{userId}")
     public ChatDto getByUsers(@PathVariable int myId, @PathVariable int userId){
         return ChatDto.toDto(chatService.getByUsers(myId, userId));
+    }
+
+    @GetMapping("chat/private/{name}")
+    public List<ChatDto> getByNameNoPrivate(@PathVariable String name){
+        return ChatDto.toDto(chatService.getAllByNameNoPrivate(name));
     }
 
     private Chat getChatByParams( String usersId, String messages, String isGroup, String name, String description, String isPrivate, int admin){

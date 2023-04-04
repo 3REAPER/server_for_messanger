@@ -11,15 +11,9 @@ import java.util.List;
 @RestController
 public class MessageController {
     private final MessageService messageService;
-    private final ProfileService profileService;
-    private final ChatService chatService;
-    private final ConditionSendService conditionSendService;
 
     public MessageController() throws SQLException, ClassNotFoundException {
         this.messageService = new MessageServiceImpl();
-        this.profileService = new ProfileServiceImpl();
-        this.chatService = new ChatServiceImpl();
-        this.conditionSendService = new ConditionSendServiceImpl();
     }
 
     @PostMapping("/message")
@@ -40,17 +34,17 @@ public class MessageController {
     }
 
     @DeleteMapping("/message/{id}")
-    public void delete(@PathVariable int id) throws SQLException, ClassNotFoundException {
+    public void delete(@PathVariable int id){
         messageService.delete(id);
     }
 
     @GetMapping("/message/{id}")
-    public MessageDto getById(@PathVariable int id) throws SQLException, ClassNotFoundException {
+    public MessageDto getById(@PathVariable int id){
         return MessageDto.toDto(messageService.getById(id));
     }
 
     @GetMapping("/message/chat/{id}")
-    public List<MessageDto> getAllByChatId(@PathVariable int id) throws SQLException, ClassNotFoundException {
+    public List<MessageDto> getAllByChatId(@PathVariable int id) {
         return MessageDto.toDto(messageService.getAllByChatId(id));
     }
 

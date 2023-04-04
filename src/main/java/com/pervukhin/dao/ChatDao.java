@@ -1,9 +1,6 @@
 package com.pervukhin.dao;
 
 import com.pervukhin.domain.Chat;
-import com.pervukhin.domain.Message;
-
-import java.sql.SQLException;
 import java.util.List;
 
 public interface ChatDao {
@@ -19,4 +16,6 @@ public interface ChatDao {
 
     List<Chat> getAllByUserId(int id);
     List<Chat> getAll();
+
+    List<Chat> getAllByNameNoPrivate(String name);
 }

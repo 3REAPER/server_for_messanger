@@ -1,6 +1,4 @@
 package com.pervukhin.domain;
-
-import java.sql.SQLException;
 import java.util.List;
 
 public class GroupChat extends Chat{
@@ -9,7 +7,7 @@ public class GroupChat extends Chat{
     private Boolean isPrivate;
     private Profile admin;
 
-    public GroupChat(int id, String usersId, String messages, String isGroup, String name, String description, String isPrivate, int admin) throws SQLException, ClassNotFoundException {
+    public GroupChat(int id, String usersId, String messages, String isGroup, String name, String description, String isPrivate, int admin){
         super(id, usersId, messages, isGroup);
         this.name = name;
         this.description = description;
@@ -17,7 +15,7 @@ public class GroupChat extends Chat{
         this.admin = parseIntToAdmin(admin);
     }
 
-    public GroupChat(String usersId, String messages, String isGroup, String name, String description, String isPrivate, int admin) throws SQLException, ClassNotFoundException {
+    public GroupChat(String usersId, String messages, String isGroup, String name, String description, String isPrivate, int admin){
         super(usersId, messages, isGroup);
         this.name = name;
         this.description = description;
