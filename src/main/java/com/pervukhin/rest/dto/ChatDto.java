@@ -23,7 +23,7 @@ public class ChatDto {
     private String name;
     private String description;
     private Boolean isPrivate;
-    private Profile admin;
+    private ProfileDto admin;
 
     public static ChatDto toDto(Chat chat){
         List<ProfileDto> userList = ProfileDto.toDto(chat.getUsersId());
@@ -31,7 +31,8 @@ public class ChatDto {
 
         if (chat instanceof GroupChat){
             GroupChat groupChat = ((GroupChat) chat);
-            return new ChatDto(groupChat.getId() ,userList ,messageList, groupChat.getIsGroup(), groupChat.getName(), groupChat.getDescription(), groupChat.getIsPrivate(), groupChat.getAdmin());
+            ProfileDto profileDto = ProfileDto.toDto(((GroupChat) chat).getAdmin());
+            return new ChatDto(groupChat.getId() ,userList ,messageList, groupChat.getIsGroup(), groupChat.getName(), groupChat.getDescription(), groupChat.getIsPrivate(), profileDto);
         }else {
             return new ChatDto(chat.getId(), userList, messageList, chat.getIsGroup(), null, null,null,null);
         }
@@ -41,9 +42,10 @@ public class ChatDto {
         try {
             List<Profile> userList = ProfileDto.toDomainObject(chatDto.getUsersId());
             List<Message> messageList = MessageDto.toDomainObject(chatDto.getMessages());
+            Profile profile = ProfileDto.toDomainObject(chatDto.getAdmin());
 
             if (chatDto.isGroup) {
-                return new GroupChat(chatDto.getId(), userList, messageList, chatDto.getIsGroup(), chatDto.getName(), chatDto.getDescription(), chatDto.getIsPrivate(), chatDto.getAdmin());
+                return new GroupChat(chatDto.getId(), userList, messageList, chatDto.getIsGroup(), chatDto.getName(), chatDto.getDescription(), chatDto.getIsPrivate(), profile);
             } else {
                 return new Chat(chatDto.getId(), userList, messageList, chatDto.getIsGroup());
             }

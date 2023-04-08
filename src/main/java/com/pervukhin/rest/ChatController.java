@@ -20,32 +20,17 @@ public class ChatController {
     }
 
     @PostMapping("chat")
-    public void insert(
-            @RequestParam String usersId,
-            @RequestParam String messages,
-            @RequestParam String isGroup,
-            @RequestParam String name,
-            @RequestParam String description,
-            @RequestParam String isPrivate,
-            @RequestParam int admin){
+    public void insert(@RequestBody ChatDto chatDto){
 
-        Chat chat = getChatByParams(usersId, messages, isGroup, name, description, isPrivate, admin);
+        Chat chat = ChatDto.toDomainObject(chatDto);
 
         chatService.insert(chat);
     }
 
     @PostMapping("chat/{id}")
-    public void update(
-            @PathVariable int id,
-            @RequestParam String usersId,
-            @RequestParam String messages,
-            @RequestParam String isGroup,
-            @RequestParam String name,
-            @RequestParam String description,
-            @RequestParam String isPrivate,
-            @RequestParam int admin){
+    public void update(@RequestBody ChatDto chatDto){
 
-        Chat chat = getChatByParams(id, usersId, messages, isGroup, name, description, isPrivate, admin);
+        Chat chat = ChatDto.toDomainObject(chatDto);
 
         chatService.update(chat);
     }
@@ -101,32 +86,6 @@ public class ChatController {
     @GetMapping("chat/private/{name}")
     public List<ChatDto> getByNameNoPrivate(@PathVariable String name){
         return ChatDto.toDto(chatService.getAllByNameNoPrivate(name));
-    }
-
-    private Chat getChatByParams( String usersId, String messages, String isGroup, String name, String description, String isPrivate, int admin){
-        try {
-            if (isGroup.equals("true")) {
-                return new GroupChat(usersId, messages, isGroup, name, description, isPrivate, admin);
-            } else {
-                return new Chat(usersId, messages, isGroup);
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    private Chat getChatByParams(int id, String usersId, String messages, String isGroup, String name, String description, String isPrivate, int admin){
-        try {
-            if (isGroup.equals("true")) {
-                return new GroupChat(id, usersId, messages, isGroup, name, description, isPrivate, admin);
-            } else {
-                return new Chat(id, usersId, messages, isGroup);
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-            return null;
-        }
     }
 
 

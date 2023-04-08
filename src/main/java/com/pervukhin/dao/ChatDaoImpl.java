@@ -38,10 +38,11 @@ public class ChatDaoImpl implements ChatDao{
                 statement.setObject(2, groupChat.getDescription());
                 statement.setObject(3, groupChat.getAdmin().getId());
                 statement.setObject(4, Chat.parseListIntToString(groupChat.getUsersId()));
-                statement.setObject(5, groupChat.getIsPrivate());
+                statement.setObject(5, groupChat.getIsPrivate().toString());
                 if (groupChat.getMessages().isEmpty()) {
                     statement.setObject(6, "");
                 } else statement.setObject(6, groupChat.getMessages());
+                statement.setObject(7,groupChat.getIsGroup().toString());
 
             }else {
                 statement.setObject(1, null);
