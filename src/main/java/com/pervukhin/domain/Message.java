@@ -2,99 +2,91 @@ package com.pervukhin.domain;
 
 import com.pervukhin.dao.ConditionSendDao;
 import com.pervukhin.dao.ConditionSendDaoImpl;
-import java.time.LocalDate;
-import java.time.LocalTime;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Message {
+public abstract class Message {
     private int id;
-    private String message;
     private String time;
-    private String isEdit;
     private Profile authorId;
-    private List<ConditionSend> conditionSend;
     private int chatId;
+    private List<ConditionSend> conditionSend;
+    private boolean isPhoto;
 
-    public Message(int id, String message, String time, String isEdit, Profile authorId, String conditionSend, int chatId) {
+    public Message(int id, String time, Profile authorId, int chatId, String conditionSend, boolean isPhoto) {
         this.id = id;
-        this.message = message;
         this.time = time;
-        this.isEdit = isEdit;
         this.authorId = authorId;
+        this.chatId = chatId;
         this.conditionSend = parseStringToList(conditionSend);
-        this.chatId = chatId;
+        this.isPhoto = isPhoto;
     }
 
-    public Message(String message, String time, String isEdit, Profile authorId, String conditionSend, int chatId) {
-        this.message = message;
+    public Message(String time, Profile authorId, int chatId, String conditionSend, boolean isPhoto) {
         this.time = time;
-        this.isEdit = isEdit;
         this.authorId = authorId;
+        this.chatId = chatId;
         this.conditionSend = parseStringToList(conditionSend);
-        this.chatId = chatId;
+        this.isPhoto = isPhoto;
     }
 
-    public Message(int id, String message, String time, String isEdit, Profile authorId, List<ConditionSend> conditionSend, int chatId) {
-        this.message = message;
+    public Message(int id, String time, Profile authorId, int chatId, List<ConditionSend> conditionSend, boolean isPhoto) {
+        this.id = id;
         this.time = time;
-        this.isEdit = isEdit;
         this.authorId = authorId;
-        this.conditionSend = conditionSend;
         this.chatId = chatId;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public void setIsEdit(String isEdit) {
-        this.isEdit = isEdit;
-    }
-
-    public void setAuthorId(Profile authorId) {
-        this.authorId = authorId;
-    }
-
-    public void setConditionSend(List<ConditionSend> conditionSend) {
         this.conditionSend = conditionSend;
-    }
-
-    public void setChatId(int chatId) {
-        this.chatId = chatId;
+        this.isPhoto = isPhoto;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
     public String getTime() {
         return time;
-    }
-
-    public String getIsEdit() {
-        return isEdit;
     }
 
     public Profile getAuthor() {
         return authorId;
     }
 
+    public int getChatId() {
+        return chatId;
+    }
+
     public List<ConditionSend> getConditionSend() {
         return conditionSend;
     }
 
-    public int getChatId() {
-        return chatId;
+    public boolean getIsPhoto() {
+        return isPhoto;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public void setAuthorId(Profile authorId) {
+        this.authorId = authorId;
+    }
+
+    public void setChatId(int chatId) {
+        this.chatId = chatId;
+    }
+
+    public void setConditionSend(List<ConditionSend> conditionSend) {
+        this.conditionSend = conditionSend;
+    }
+
+    public void setPhoto(boolean photo) {
+        isPhoto = photo;
     }
 
     public List<ConditionSend> parseStringToList(String conditionSend){
@@ -127,9 +119,14 @@ public class Message {
         }
     }
 
-    public static String getDateNow(){
-        String[] arrayListDate = LocalDate.now().toString().split("-");
-        String[] arrayListTime = LocalTime.now().toString().split(":");
-        return arrayListDate[2] +"-" +arrayListDate[1] +"-" +arrayListDate[0] +"T" +arrayListTime[0] +":" +arrayListTime[1];
+    public static Boolean parseStringToBoolean(String string){
+        if (string.equals("true")){
+            return true;
+        }else if (string.equals("false")){
+            return false;
+        }else {
+            return null;
+        }
     }
+
 }
