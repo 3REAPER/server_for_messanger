@@ -6,45 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1b4879d4-d4ca-4820-97c7-9f5fc7f64e90" name="Default Changelist" comment="update Dto use in Controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/LibraryApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/LibraryApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ChatDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ChatDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ChatDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ChatDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ConditionSendDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ConditionSendDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ConditionSendDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ConditionSendDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ProfileDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/ProfileDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Chat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/ConditionSend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/ConditionSend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/GroupChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/GroupChat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/ChatController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/dto/ChatDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/dto/ChatDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/dto/MessageDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/dto/MessageDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/dto/ProfileDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/dto/ProfileDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/ChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/ChatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/ChatServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/ChatServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/MessageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/MessageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/ProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/ProfileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/LibraryApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/LibraryApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/ChatDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/ChatDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/ChatDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/ChatDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/ConditionSendDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/ConditionSendDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/ProfileDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/ProfileDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/domain/Chat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/domain/Chat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/domain/ConditionSend.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/domain/ConditionSend.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/domain/GroupChat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/domain/GroupChat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/ChatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/ChatController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/MessageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/MessageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/ProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/dto/MessageDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/dto/MessageDto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/dto/ProfileDto$ProfileDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/dto/ProfileDto$ProfileDtoBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/dto/ProfileDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/dto/ProfileDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/service/ChatService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/service/ChatService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/service/ChatServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/service/ChatServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/service/MessageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/service/MessageService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/service/MessageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/service/MessageServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/service/ProfileServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/service/ProfileServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,19 +44,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/project/tests",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/project/tests&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="getMessages" />
@@ -252,11 +218,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
           <line>54</line>
           <option name="timeStamp" value="142" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/rest/MessageController.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="143" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>

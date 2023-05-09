@@ -1,5 +1,6 @@
 package com.pervukhin.rest.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pervukhin.domain.Profile;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
