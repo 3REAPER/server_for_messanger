@@ -5,12 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b4879d4-d4ca-4820-97c7-9f5fc7f64e90" name="Default Changelist" comment="update Dto use in Controller">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/dto/ProfileDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/dto/ProfileDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/MessageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/MessageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/dto/ProfileDto$ProfileDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/dto/ProfileDto$ProfileDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/dto/ProfileDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/dto/ProfileDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Chat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/PhotoMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/domain/TextMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/dto/ChatDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/dto/ChatDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/dto/LinkBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/dto/MessageDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/rest/dto/MessageDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/MessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pervukhin/service/MessageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/MessageDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/MessageDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/MessageDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/dao/MessageDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/domain/Chat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/domain/Chat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/domain/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/domain/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/dto/MessageDto$MessageDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/dto/MessageDto$MessageDtoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/dto/MessageDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/rest/dto/MessageDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/service/MessageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/service/MessageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pervukhin/service/MessageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pervukhin/service/MessageServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +39,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="70a4d6075396aef3f45a19ba0d935243e76ed6f8" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubPullRequestsUISettings">
@@ -196,32 +214,32 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>46</line>
+          <line>49</line>
           <option name="timeStamp" value="138" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>55</line>
+          <line>58</line>
           <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>50</line>
+          <line>53</line>
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>52</line>
+          <line>55</line>
           <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>54</line>
+          <line>57</line>
           <option name="timeStamp" value="142" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/pervukhin/dao/MessageDaoImpl.java</url>
-          <line>47</line>
+          <line>50</line>
           <option name="timeStamp" value="144" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

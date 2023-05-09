@@ -1,8 +1,10 @@
 package com.pervukhin.service;
 
 import com.pervukhin.dao.*;
-import com.pervukhin.domain.*;
-
+import com.pervukhin.domain.Chat;
+import com.pervukhin.domain.ConditionSend;
+import com.pervukhin.domain.Message;
+import com.pervukhin.domain.Profile;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +21,9 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
-    public void insert(Message message) {
+    public void insert(Message message, int chatId) {
         List<ConditionSend> conditionSends = new ArrayList<>();
-        for (Profile profile : chatDao.getById(message.getChatId()).getUsersId()) {
+        for (Profile profile : chatDao.getById(chatId).getUsersId()) {
             if (profile.getId() != message.getAuthor().getId()) {
                 conditionSends.add(new ConditionSend(profile.getId(), ConditionSend.CONDITION_CREATE));
             }
@@ -32,20 +34,12 @@ public class MessageServiceImpl implements MessageService {
                 conditionSendsWithId.add(conditionSendDao.getById(id));
         }
         message.setConditionSend(conditionSendsWithId);
-        if (message.getIsPhoto()){
-            messageDao.insert(((PhotoMessage) message));
-        }else {
-            messageDao.insert(((TextMessage) message));
-        }
+        messageDao.insert(message, chatId);
     }
 
     @Override
     public void update(Message message) {
-        if (message.getIsPhoto()){
-            messageDao.update(((PhotoMessage) message));
-        }else {
-            messageDao.update(((TextMessage) message));
-        }
+        messageDao.update(message);
         for (ConditionSend conditionSend: message.getConditionSend()){
             conditionSendDao.update(conditionSend);
         }

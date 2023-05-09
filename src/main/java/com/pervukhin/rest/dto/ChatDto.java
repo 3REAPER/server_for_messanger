@@ -1,6 +1,9 @@
 package com.pervukhin.rest.dto;
 
-import com.pervukhin.domain.*;
+import com.pervukhin.domain.Chat;
+import com.pervukhin.domain.GroupChat;
+import com.pervukhin.domain.Message;
+import com.pervukhin.domain.Profile;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -3,8 +3,6 @@ package com.pervukhin.dao;
 import com.pervukhin.LibraryApp;
 import com.pervukhin.domain.Chat;
 import com.pervukhin.domain.Message;
-import com.pervukhin.domain.PhotoMessage;
-import com.pervukhin.domain.TextMessage;
 import org.sqlite.JDBC;
 
 import java.sql.*;
@@ -33,85 +31,44 @@ public class MessageDaoImpl implements MessageDao{
     }
 
     @Override
-    public void insert(TextMessage message) {
+    public void insert(Message message, int chatId) {
         try (PreparedStatement statement = this.connection.prepareStatement(
-                "INSERT INTO Message(`message`, `time`, `isEdit`, `authorId`, `conditionSend`, `chatId`, `isPhoto`) " +
-                        "VALUES(?, ?, ?, ?, ?, ?, ?)")) {
+                "INSERT INTO Message(`message`, `time`, `isEdit`, `authorId`, `conditionSend`, `chatId`) " +
+                        "VALUES(?, ?, ?, ?, ?, ?)")) {
             statement.setObject(1, message.getMessage());
             statement.setObject(2, message.getTime());
             statement.setObject(3, message.getIsEdit());
             statement.setObject(4, message.getAuthor().getId());
             statement.setObject(5, Message.parseListToString(message.getConditionSend()));
             statement.setObject(6, message.getChatId());
-            statement.setObject(7, message.getIsPhoto());
 
             statement.execute();
             int messageId = statement.getGeneratedKeys().getInt("last_insert_rowId()");
-            updateChatByMessage(messageId, message.getChatId());
+            Chat chat = chatDao.getById(chatId);
+            String oldMessages = Chat.parseListMessagesToString(chat.getMessages());
+            String newMessages = "";
+            if (oldMessages.equals("")){
+                newMessages = String.valueOf(messageId);
+            }else {
+                newMessages = oldMessages +";" +messageId;
+            }
+            chat.setMessages(newMessages);
+            chatDao.update(chat);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     @Override
-    public void insert(PhotoMessage message) {
-        try (PreparedStatement statement = this.connection.prepareStatement(
-                "INSERT INTO Message(`time`, `authorId`, conditionSend, `chatId`, `isPhoto`, `path`)" +
-                        "VALUES(?, ?, ?, ?, ?, ?)")) {
-            statement.setObject(1, message.getTime());
-            statement.setObject(2, message.getAuthor().getId());
-            statement.setObject(3, Message.parseListToString(message.getConditionSend()));
-            statement.setObject(4, message.getChatId());
-            statement.setObject(5, String.valueOf(message.getIsPhoto()));
-            statement.setObject(6, message.getPath());
-
-            statement.execute();
-            int messageId = statement.getGeneratedKeys().getInt("last_insert_rowId()");
-            updateChatByMessage(messageId, message.getChatId());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void updateChatByMessage(int messageId, int chatId){
-        Chat chat = chatDao.getById(chatId);
-        String oldMessages = Chat.parseListMessagesToString(chat.getMessages());
-        String newMessages = "";
-        if (oldMessages.equals("")){
-            newMessages = String.valueOf(messageId);
-        }else {
-            newMessages = oldMessages +";" +messageId;
-        }
-        chat.setMessages(newMessages);
-        chatDao.update(chat);
-    }
-
-
-    @Override
-    public void update(TextMessage message) {
-        try (PreparedStatement statement = this.connection.prepareStatement("UPDATE Message SET message=?, time=?, isEdit=?, authorId=?, conditionSend=?, chatId=?, isPhoto=? WHERE id = ?")) {
+    public void update(Message message) {
+        try (PreparedStatement statement = this.connection.prepareStatement("UPDATE Message SET message=?, time=?, isEdit=?, authorId=?, conditionSend=?, chatId=? WHERE id = ?")) {
             statement.setObject(1, message.getMessage());
             statement.setObject(2, message.getTime());
             statement.setObject(3, message.getIsEdit());
             statement.setObject(4, message.getAuthor().getId());
-            statement.setObject(5, TextMessage.parseListToString(message.getConditionSend()));
+            statement.setObject(5, Message.parseListToString(message.getConditionSend()));
             statement.setObject(6, message.getChatId());
-            statement.setObject(7, message.getIsPhoto());
-            statement.setObject(8, message.getId());
-            statement.execute();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void update(PhotoMessage message) {
-        try (PreparedStatement statement = this.connection.prepareStatement("UPDATE Message SET time=?, authorId=?, chatId=?, isPhoto=? WHERE id = ?")) {
-            statement.setObject(1, message.getTime());
-            statement.setObject(2, message.getAuthor().getId());
-            statement.setObject(3, message.getChatId());
-            statement.setObject(4, message.getIsPhoto());
-            statement.setObject(5, message.getId());
+            statement.setObject(7, message.getId());
             statement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -134,7 +91,15 @@ public class MessageDaoImpl implements MessageDao{
         try (PreparedStatement statement = this.connection.prepareStatement("SELECT * FROM Message WHERE id = ?")) {
             statement.setObject(1,id);
             ResultSet resultSet = statement.executeQuery();
-            return getMessageByResultSet(resultSet);
+            return new Message(
+                    resultSet.getInt("id"),
+                    resultSet.getString("message"),
+                    resultSet.getString("time"),
+                    resultSet.getString("isEdit"),
+                    profileDao.getById(resultSet.getInt("authorId")),
+                    resultSet.getString("conditionSend"),
+                    resultSet.getInt("chatId")
+            );
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -159,40 +124,18 @@ public class MessageDaoImpl implements MessageDao{
             ResultSet resultSet = statement.executeQuery();
             List<Message> list = new ArrayList<>();
             while (resultSet.next()) {
-                list.add(getMessageByResultSet(resultSet));
-            }
-            return list;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    private Message getMessageByResultSet(ResultSet resultSet){
-        try {
-            if (resultSet.getString("isPhoto").equals("true")) {
-                return new PhotoMessage(
-                        resultSet.getInt("id"),
-                        resultSet.getString("time"),
-                        profileDao.getById(resultSet.getInt("authorId")),
-                        resultSet.getInt("chatId"),
-                        resultSet.getString("conditionSend"),
-                        Message.parseStringToBoolean(resultSet.getString("isPhoto")),
-                        resultSet.getString("path")
-                );
-            } else {
-                return new TextMessage(
+                list.add(new Message(
                         resultSet.getInt("id"),
                         resultSet.getString("message"),
                         resultSet.getString("time"),
                         resultSet.getString("isEdit"),
                         profileDao.getById(resultSet.getInt("authorId")),
                         resultSet.getString("conditionSend"),
-                        resultSet.getInt("chatId"),
-                        resultSet.getBoolean("isPhoto")
-                );
+                        resultSet.getInt("chatId")
+                ));
             }
-        }catch (Exception e){
+            return list;
+        } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }

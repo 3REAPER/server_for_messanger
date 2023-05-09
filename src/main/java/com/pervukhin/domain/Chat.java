@@ -64,7 +64,7 @@ public class Chat {
         this.messages = parseStringToListMessages(messages);
     }
 
-    public void addMessages(TextMessage messages) {
+    public void addMessages(Message messages) {
         this.messages.add(messages);
     }
 
