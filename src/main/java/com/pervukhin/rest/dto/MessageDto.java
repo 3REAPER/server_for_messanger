@@ -1,8 +1,7 @@
 package com.pervukhin.rest.dto;
 
-import com.pervukhin.domain.ConditionSend;
-import com.pervukhin.domain.Message;
-import com.pervukhin.domain.Profile;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.pervukhin.domain.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,8 +22,12 @@ public class MessageDto {
     private ProfileDto authorId;
     private List<ConditionSendDto> conditionSend;
     private int chatId;
+    private boolean isPhoto;
+    @JsonIgnore
+    private String path;
+    private String link;
 
-    public static MessageDto toDto(Message message){
+    public static MessageDto toDto(TextMessage message){
         ProfileDto authorId = ProfileDto.toDto(message.getAuthor());
 
         List<ConditionSend> conditionSendList = message.getConditionSend();
@@ -41,7 +44,34 @@ public class MessageDto {
                 message.getIsEdit(),
                 authorId,
                 conditionSendDtoList,
-                message.getChatId()
+                message.getChatId(),
+                message.getIsPhoto(),
+                null,
+                null
+        );
+    }
+
+    public static MessageDto toDto(PhotoMessage message){
+        ProfileDto authorId = ProfileDto.toDto(message.getAuthor());
+
+        List<ConditionSend> conditionSendList = message.getConditionSend();
+        List<ConditionSendDto> conditionSendDtoList = new ArrayList<>();
+
+        for (ConditionSend conditionSend: conditionSendList) {
+            conditionSendDtoList.add(ConditionSendDto.toDto(conditionSend));
+        }
+
+        return new MessageDto(
+                message.getId(),
+                null,
+                message.getTime(),
+                null,
+                authorId,
+                conditionSendDtoList,
+                message.getChatId(),
+                message.getIsPhoto(),
+                message.getPath(),
+                LinkBuilder.createLink(message.getPath())
         );
     }
 
@@ -54,23 +84,40 @@ public class MessageDto {
         for (ConditionSendDto conditionSendDto: conditionSendDtoList) {
             conditionSendList.add(ConditionSendDto.toDomainObject(conditionSendDto));
         }
+        if (messageDto.isPhoto){
+            return new PhotoMessage(
+                    messageDto.getId(),
+                    messageDto.getTime(),
+                    authorId,
+                    messageDto.getChatId(),
+                    conditionSendList,
+                    messageDto.isPhoto,
+                    messageDto.getPath()
+            );
+        }else {
+            return new TextMessage(
+                    messageDto.getId(),
+                    messageDto.getMessage(),
+                    messageDto.getTime(),
+                    messageDto.getIsEdit(),
+                    authorId,
+                    conditionSendList,
+                    messageDto.getChatId(),
+                    messageDto.isPhoto
 
-        return new Message(
-                messageDto.getId(),
-                messageDto.getMessage(),
-                messageDto.getTime(),
-                messageDto.getIsEdit(),
-                authorId,
-                conditionSendList,
-                messageDto.getChatId()
-        );
+            );
+        }
     }
 
     public static List<MessageDto> toDto(List<Message> list) {
         List<MessageDto> result = new ArrayList<>();
         if (list != null) {
             for (Message message : list) {
-                result.add(toDto(message));
+                if (message.getIsPhoto()){
+                    result.add(toDto(((PhotoMessage) message)));
+                }else {
+                    result.add(toDto(((TextMessage) message)));
+                }
             }
         }
         return result;
